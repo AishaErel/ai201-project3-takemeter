@@ -112,6 +112,13 @@ weighted avg       0.97      0.97      0.97        31
 
 <img width="1050" height="750" alt="confusion_matrix" src="https://github.com/user-attachments/assets/63b87e87-bf46-4bd2-9f7a-ff73edb3ef24" />
 
+| Actual \ Predicted | Analysis | News | Opinion |
+| ------------------ | -------: | ---: | ------: |
+| Analysis           |        0 |    5 |       0 |
+| News               |        0 |   13 |       0 |
+| Opinion            |        0 |    4 |       9 |
+
+
 
 3 Wrong Examples:
 1- I just read an article on a way to fix tanking that does a regression based on EPM wins above replacement...
