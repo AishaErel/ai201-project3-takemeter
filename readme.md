@@ -43,6 +43,47 @@ Training setup:
 - Batch size: 16
 
 I chose 3 epochs because the dataset contains only 205 examples and additional epochs risked overfitting. I used a learning rate of 2e-5 because it is a common starting point for transformer fine-tuning and produced stable validation performance.
+
+## Baseline Model
+
+The baseline used Groq's Llama-3.3-70B model with prompt-based classification.
+
+Prompt summary:
+- Defined News, Analysis, and Opinion
+- Included one example for each label
+- Instructed the model to output only the label name
+
+The baseline was evaluated on the same held-out test set used for the fine-tuned model.
+
+RESULTS COMPARISON
+==================================================
+Model                               Accuracy
+---------------------------------------------
+Zero-shot baseline (Groq)              0.968
+Fine-tuned DistilBERT                  0.710
+---------------------------------------------
+
+Fine-tuning regression: 0.258
+
+## Evaluation Report
+🎯 Baseline accuracy: 0.968  (evaluated on 31/31 parseable responses)
+
+Per-class metrics (baseline):
+              precision    recall  f1-score   support
+
+    Analysis       1.00      0.80      0.89         5
+        News       1.00      1.00      1.00        13
+     Opinion       0.93      1.00      0.96        13
+
+    accuracy                           0.97        31
+   macro avg       0.98      0.93      0.95        31
+weighted avg       0.97      0.97      0.97        31
+==================================================
+
+
+<img width="1050" height="750" alt="confusion_matrix" src="https://github.com/user-attachments/assets/5123161d-f678-46be-8c9e-2a6e566f3a51" />
+
+
 ## AI Tool Plan
 
 ### Label Stress-Testing
