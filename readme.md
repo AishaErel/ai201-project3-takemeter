@@ -16,6 +16,8 @@ The hardest boundary is Analysis vs. Opinion. Many r/nba posts contain both a su
 **Data Collection Plan:**
 I will collect examples from recent and highly engaged posts on r/nba, including game threads, news posts, player debate posts, statistical analysis posts, highlight clips, and meme/reaction posts. I will aim for about 50 examples per label, for a total of 200 annotated examples across three labels: Analysis, News, and Opinion If one label is underrepresented after 200 examples, I will do targeted collection by searching for posts that are more likely to contain that label, such as searching for “highlight,” “stat,” “trade,” “injury,” “ranking,” or “analysis,” while making sure the examples still come from real r/nba posts.
 
+
+
 **Evaluation Metrics:**
 I will use accuracy, precision, recall, and F1-score to evaluate the classifier. Accuracy is useful for measuring overall performance, but it is not enough because some labels may be easier or more common than others. Precision will show how often the model is correct when it assigns a label, while recall will show whether the model is missing important examples of a label. I will also use macro-F1 because it gives equal weight to each label and is better for this task if the dataset is not perfectly balanced.
 
@@ -30,6 +32,17 @@ This one looks like news as well, however they are not reporting news, they're i
 This one looks like a news or analysis, however its actually an opinion, if it was like "Today's bigs are not good at boxing out. Looking at rebound positioning data from the last 15 years." then it would have become analysis
 3- Bobby Marks: "I'm still of the belief it's Miami because when you look at Giannis, it's the superstar checklist of 3 things [that Buck want]: Draft Capital, Young Players On Controllable Contracts, Win NOW Players. I do think that Miami right now has the best package out there"
 This looks like news but its actually an analysis bc he's not just reporting information. he is making a prediction/evaluation and explaining his reasoning.
+
+## Dataset Summary
+
+Total examples: 205
+
+Label distribution:
+- Opinion: 88
+- News: 84
+- Analysis: 33
+
+
 ## Fine-Tuning Pipeline
 
 I fine-tuned DistilBERT using Google Colab and Hugging Face Transformers.
