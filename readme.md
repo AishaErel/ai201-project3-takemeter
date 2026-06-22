@@ -27,7 +27,22 @@ This one looks like news as well, however they are not reporting news, they're i
 This one looks like a news or analysis, however its actually an opinion, if it was like "Today's bigs are not good at boxing out. Looking at rebound positioning data from the last 15 years." then it would have become analysis
 3- Bobby Marks: "I'm still of the belief it's Miami because when you look at Giannis, it's the superstar checklist of 3 things [that Buck want]: Draft Capital, Young Players On Controllable Contracts, Win NOW Players. I do think that Miami right now has the best package out there"
 This looks like news but its actually an analysis bc he's not just reporting information. he is making a prediction/evaluation and explaining his reasoning.
+## Fine-Tuning Pipeline
 
+I fine-tuned DistilBERT using Google Colab and Hugging Face Transformers.
+
+Base model:
+- distilbert-base-uncased
+
+Training platform:
+- Google Colab
+
+Training setup:
+- Epochs: 3
+- Learning rate: 2e-5
+- Batch size: 16
+
+I chose 3 epochs because the dataset contains only 205 examples and additional epochs risked overfitting. I used a learning rate of 2e-5 because it is a common starting point for transformer fine-tuning and produced stable validation performance.
 ## AI Tool Plan
 
 ### Label Stress-Testing
