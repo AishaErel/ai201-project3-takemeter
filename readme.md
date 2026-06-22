@@ -163,4 +163,9 @@ After evaluating the model, I will collect examples that were misclassified and 
 
 All dataset labels were manually reviewed before training.
 
+## Spec Reflection
+
+The specification helped by forcing me to define label boundaries before annotation. This made it easier to consistently distinguish Analysis from Opinion when labeling examples.
+
+One way implementation diverged from the original plan was class balance. I initially planned to collect roughly equal numbers of examples for each label, but r/nba naturally contains far more News and Opinion posts than Analysis posts. To address this, I performed targeted searches for statistical and comparison-based posts to increase the number of Analysis examples.
 
