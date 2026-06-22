@@ -60,6 +60,19 @@ Training setup:
 
 I chose 3 epochs because the dataset contains only 205 examples and additional epochs risked overfitting. I used a learning rate of 2e-5 because it is a common starting point for transformer fine-tuning and produced stable validation performance.
 
+🎯 Fine-tuned model accuracy: 0.710
+
+Per-class metrics (fine-tuned model):
+              precision    recall  f1-score   support
+
+    Analysis       0.00      0.00      0.00         5
+        News       0.59      1.00      0.74        13
+     Opinion       1.00      0.69      0.82        13
+
+    accuracy                           0.71        31
+   macro avg       0.53      0.56      0.52        31
+weighted avg       0.67      0.71      0.65        31
+
 ## Baseline Model
 
 The baseline used Groq's Llama-3.3-70B model with prompt-based classification.
