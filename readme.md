@@ -83,6 +83,35 @@ weighted avg       0.97      0.97      0.97        31
 
 <img width="1050" height="750" alt="confusion_matrix" src="https://github.com/user-attachments/assets/63b87e87-bf46-4bd2-9f7a-ff73edb3ef24" />
 
+
+3 Wrong Examples:
+1- I just read an article on a way to fix tanking that does a regression based on EPM wins above replacement...
+True Label: Analysis
+Predicted: News
+Explanation:
+The model likely focused on phrases such as "I just read an article" and interpreted the post as sharing information from an external source. However, the post is actually discussing a statistical model, evaluating its methodology, and reasoning about its usefulness. 
+
+2- [Katz] The Knicks are the one NYC team that runs unopposed in New York...
+
+True Label: Analysis
+Predicted: News
+
+Explanation:
+The model appears to have relied heavily on the reporter tag "[Katz]", which is commonly associated with News posts in the training data. However, the content is not reporting a transaction, injury, or announcement. Instead, it is making an argument about the Knicks' unique position in the New York sports market and providing supporting comparisons. This makes it Analysis rather than News.
+
+3- Carmelo Anthony had the cleanest jumpshot ever.
+
+True Label: Opinion
+Predicted: News
+
+Explanation:
+This post is a pure subjective judgment with no supporting evidence, which matches the Opinion label. The model likely struggled because the statement is very short and lacks obvious opinion markers such as "I think" or "in my opinion." As a result, the model may have defaulted toward News when it could not identify clear evidence of analysis or reporting.
+
+
+
+## Reflection on Failure Pattern
+The largest source of error was confusion between Analysis and Opinion. Many r/nba posts combine evidence with subjective conclusions, making the boundary difficult even for humans. The model performed much better at identifying News because trade reports and player quotes have distinctive language patterns.
+
 ## AI Tool Plan
 
 ### Label Stress-Testing
