@@ -1,4 +1,7 @@
+I chose r/nba. This community is a strong fit for a classification task because it contains several distinct types of content, including news reports, statistical analysis, player debates, predictions, highlights, and memes. The large and active user base produces a diverse range of posts, making it possible to create meaningful labels and train a model to distinguish between different styles of basketball discussion.
+
 **Labels**:
+
 Label 1- Analysis: Posts that use statistics, game footage, historical comparisons, or detailed reasoning to support a basketball argument.
 Examples: 1- Why Nikola Jokic is the most impactful offensive player in the NBA: an analysis using lineup and efficiency data. 2- "Film breakdown of how the Celtics defended pick-and-roll actions in the playoffs."
 
@@ -125,3 +128,13 @@ I may use ChatGPT to generate preliminary label suggestions for a subset of coll
 ### Failure Analysis
 
 After evaluating the model, I will collect examples that were misclassified and provide them to ChatGPT for analysis. I will ask the model to identify potential patterns, such as confusion between Analysis and Opinion posts or difficulties handling posts that contain both news and commentary.
+
+## AI Usage
+
+1. I used ChatGPT to stress-test my labels by generating borderline examples between Analysis and Opinion. Based on these examples, I refined my annotation rule so that posts were labeled Analysis only when evidence was the primary focus.
+
+2. I used ChatGPT to review difficult annotation decisions. For example, I asked whether a Zach Lowe quote discussing game strategy should be classified as News or Analysis. After reviewing the reasoning, I manually assigned the final label myself.
+
+All dataset labels were manually reviewed before training.
+
+
