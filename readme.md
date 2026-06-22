@@ -79,11 +79,6 @@ Per-class metrics (baseline):
    macro avg       0.98      0.93      0.95        31
 weighted avg       0.97      0.97      0.97        31
 ==================================================
-
-
-<img width="1050" height="750" alt="confusion_matrix" src="https://github.com/user-attachments/assets/5123161d-f678-46be-8c9e-2a6e566f3a51" />
-
-
 ## AI Tool Plan
 
 ### Label Stress-Testing
